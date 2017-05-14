@@ -1,0 +1,13 @@
+*.DS_Store
+node_modules
+*~
+cov-*
+coverage
+.idea
+.DS_Store
+.vscode
+typings
+.env
+.eslintrc.js
+assets/dist
+*.log

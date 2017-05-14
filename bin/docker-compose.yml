@@ -1,0 +1,25 @@
+version: '2'
+services:
+  app:
+    restart: always
+    mem_limit: 256m
+    build:
+      context: ../
+      dockerfile: /bin/node/Dockerfile
+    volumes:
+      - shared_data:/usr/src/app/logs
+    ports:
+      - 8090:8090
+
+  frontend:
+    restart: always
+    mem_limit: 256m
+    build:
+      context: ../
+      dockerfile: /bin/nginx/Dockerfile
+    ports:
+      - 8080:80
+    
+volumes:
+  shared_data:
+    driver: local
